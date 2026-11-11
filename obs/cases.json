@@ -1,0 +1,17 @@
+[
+  {
+    "case": "failures/2026-07-29_janssen_bace_bace_p3_arg368_in/edge_8f_8g",
+    "system": "janssen_bace/bace_p3_arg368_in",
+    "mode": "hybridisation change"
+  },
+  {
+    "case": "failures/2026-07-29_janssen_bace_bace_p3_arg368_in/edge_17f_17g",
+    "system": "janssen_bace/bace_p3_arg368_in",
+    "mode": "hybridisation change"
+  },
+  {
+    "case": "failures/2026-07-29_janssen_bace_bace_p3_arg368_in/edge_27f_27g",
+    "system": "janssen_bace/bace_p3_arg368_in",
+    "mode": "hybridisation change"
+  }
+]
