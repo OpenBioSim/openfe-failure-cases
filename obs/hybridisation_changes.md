@@ -45,9 +45,9 @@ Free leg, BioSimSpace mapping. Each edge was equilibrated with the openfe-benchm
 
 | Edge | `torsion_window false` | `torsion_window auto` |
 | --- | --- | --- |
-| 8f~8g | `NaN` at λ = 0.9 in the first block | completed, no errors |
+| 8f~8g | `NaN` at λ = 0.9 after 400 ps | completed, no errors |
 | 17f~17g | completed, no errors | completed, no errors |
-| 27f~27g | `NaN` at λ = 0.9 in the first block | completed, no errors |
+| 27f~27g | `NaN` at λ = 0.9 after 200 ps | completed, no errors |
 
 17f~17g completing without the window is chance. Its alkyne angles reach 179.5° at λ = 0.9 too, but the torsions through them are weak (in 8f~8g the largest is about 0.6 kcal/mol), so reaching near-collinear only sometimes produces `NaN`. This matches OpenFE's observation that the failures didn't always happen immediately.
 
@@ -60,6 +60,16 @@ With the window, the alkyne angles behave as expected on all three edges:
 | 1.0 | 175°, 179–180° | 176°, 179–180° |
 
 The ranges cover the three edges. The window doesn't change exchange between neighbouring windows: for 17f~17g it was 1–2% for most pairs both with and without it. That overlap is low for all three edges whatever the schedule, because of the size of the perturbation, an O → C change in element together with sp3 → sp. Production runs of these edges would need more λ windows.
+
+The MBAR free energies, in kcal/mol, with the data saved before the crash for the two runs that failed:
+
+| Edge | `torsion_window false` | `torsion_window auto` |
+| --- | --- | --- |
+| 8f~8g | −16.24 ± 0.32 (400 ps) | −15.49 ± 0.20 |
+| 17f~17g | −15.90 ± 0.20 | −15.16 ± 0.20 |
+| 27f~27g | −15.88 ± 0.46 (200 ps) | −15.87 ± 0.20 |
+
+The end states are the same with and without the window, so it can't change the free energy once sampling has converged. The differences of up to 0.75 kcal/mol for 8f~8g and 17f~17g come from single 1 ns runs with a minimum overlap between neighbouring windows of 0.06–0.07, where the MBAR error estimates are likely too small. Showing agreement would need repeats, more λ windows, or both.
 
 ## Summary
 

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "pxr_OCNT-2311573~OADMET-0006255",
+    "case": "failures/2026-08-14_pxr_user_set/rbfe_OCNT-2311573_OADMET-0006255",
+    "json": "*solvent*.json",
+    "mode": "solvent failure, triple bond near the alchemical region"
+  },
+  {
+    "id": "pxr_OADMET-0006142~OCNT-2316690",
+    "case": "failures/2026-08-14_pxr_user_set/rbfe_OADMET-0006142_OCNT-2316690",
+    "json": "*solvent*.json",
+    "mode": "one mapped heavy atom, large MBAR error"
+  },
+  {
+    "id": "asap_eva71_2apro_first_test",
+    "case": "failures/2026-08-25_asap_pubilc_failures/eva71_2apro_first_test",
+    "json": "Transformation-*.json",
+    "mode": "solvent and complex failure, hybridisation change"
+  },
+  {
+    "id": "asap_EV712AproBLRN_edge_1",
+    "case": "failures/2026-08-25_asap_pubilc_failures/EV712AproBLRN/edge_1",
+    "json": "Transformation-*.json",
+    "mode": "solvent and complex failure, hybridisation change, clash"
+  },
+  {
+    "id": "asap_EV712AproBLRN_edge_2",
+    "case": "failures/2026-08-25_asap_pubilc_failures/EV712AproBLRN/edge_2",
+    "json": "Transformation-*.json",
+    "mode": "solvent and complex failure, poor alignment from a 2D mapping"
+  },
+  {
+    "id": "asap_eva71_2apro_prospective_edge_1",
+    "case": "failures/2026-08-25_asap_pubilc_failures/eva71_2apro_prospective/edge_1",
+    "json": "Transformation-*.json",
+    "mode": "solvent failure, overlapping hydrogens, possible hybridisation change"
+  },
+  {
+    "id": "asap_SHP2XPMN",
+    "case": "failures/2026-08-25_asap_pubilc_failures/SHP2XPMN",
+    "json": "Transformation-*.json",
+    "mode": "complex failure only, possible hybridisation change"
+  }
+]
