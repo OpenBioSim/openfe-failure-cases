@@ -1,6 +1,6 @@
 # Hybridisation changes: janssen_bace bace_p3_arg368_in
 
-The case `failures/2026-07-29_janssen_bace_bace_p3_arg368_in` reports that three OpenFE RBFE edges, 8f~8g, 17f~17g and 27f~27g, failed with `NaN` in most attempts, in both the solvent and complex legs, sometimes only after about 30% of the sampling time. The submitters suspected the change in hybridisation in the mapping.
+The case `failures/2026-07-29_janssen_bace_bace_p3_arg368_in` reports that three OpenFE RBFE edges, 8f\~8g, 17f\~17g and 27f\~27g, failed with `NaN` in most attempts, in both the solvent and complex legs, sometimes only after about 30% of the sampling time. The submitters suspected the change in hybridisation in the mapping.
 
 This note looks at the free (solvent) leg of the three edges with SOMD2 and Ghostly. It covers whether our default mapping avoids the change in hybridisation, why the simulations fail, and whether SOMD2's `torsion_window` option fixes them.
 
@@ -21,11 +21,11 @@ Both OpenFE's mapping and ours map the ether oxygen and the first CH2 carbon ont
 
 | Edge | OpenFE | BioSimSpace |
 | --- | --- | --- |
-| 8f~8g | 49 atoms | 50 atoms |
-| 17f~17g | 53 atoms | 53 atoms, identical |
-| 27f~27g | 56 atoms | 56 atoms, identical |
+| 8f\~8g | 49 atoms | 50 atoms |
+| 17f\~17g | 53 atoms | 53 atoms, identical |
+| 27f\~27g | 56 atoms | 56 atoms, identical |
 
-For 8f~8g, the mappings differ only at the terminal methyl. BioSimSpace maps all three hydrogens, while OpenFE leaves one unmapped on each side. In every case the change in hybridisation is in the mapped core, so our mapping doesn't avoid it.
+For 8f\~8g, the mappings differ only at the terminal methyl. BioSimSpace maps all three hydrogens, while OpenFE leaves one unmapped on each side. In every case the change in hybridisation is in the mapped core, so our mapping doesn't avoid it.
 
 ## Why the simulations fail
 
@@ -45,11 +45,11 @@ Free leg, BioSimSpace mapping. Each edge was equilibrated with the openfe-benchm
 
 | Edge | `torsion_window false` | `torsion_window auto` |
 | --- | --- | --- |
-| 8f~8g | `NaN` at λ = 0.9 after 400 ps | completed, no errors |
-| 17f~17g | completed, no errors | completed, no errors |
-| 27f~27g | `NaN` at λ = 0.9 after 200 ps | completed, no errors |
+| 8f\~8g | `NaN` at λ = 0.9 after 400 ps | completed, no errors |
+| 17f\~17g | completed, no errors | completed, no errors |
+| 27f\~27g | `NaN` at λ = 0.9 after 200 ps | completed, no errors |
 
-17f~17g completing without the window is chance. Its alkyne angles reach 179.5° at λ = 0.9 too, but the torsions through them are weak (in 8f~8g the largest is about 0.6 kcal/mol), so reaching near-collinear only sometimes produces `NaN`. This matches OpenFE's observation that the failures didn't always happen immediately.
+17f\~17g completing without the window is chance. Its alkyne angles reach 179.5° at λ = 0.9 too, but the torsions through them are weak (in 8f\~8g the largest is about 0.6 kcal/mol), so reaching near-collinear only sometimes produces `NaN`. This matches OpenFE's observation that the failures didn't always happen immediately.
 
 With the window, the alkyne angles behave as expected on all three edges:
 
@@ -59,17 +59,17 @@ With the window, the alkyne angles behave as expected on all three edges:
 | 0.9 | 172°, 178–179° | 172°, 177–180° |
 | 1.0 | 175°, 179–180° | 176°, 179–180° |
 
-The ranges cover the three edges. The window doesn't change exchange between neighbouring windows: for 17f~17g it was 1–2% for most pairs both with and without it. That overlap is low for all three edges whatever the schedule, because of the size of the perturbation, an O → C change in element together with sp3 → sp. Production runs of these edges would need more λ windows.
+The ranges cover the three edges. The window doesn't change exchange between neighbouring windows: for 17f\~17g it was 1–2% for most pairs both with and without it. That overlap is low for all three edges whatever the schedule, because of the size of the perturbation, an O → C change in element together with sp3 → sp. Production runs of these edges would need more λ windows.
 
 The MBAR free energies, in kcal/mol, with the data saved before the crash for the two runs that failed:
 
 | Edge | `torsion_window false` | `torsion_window auto` |
 | --- | --- | --- |
-| 8f~8g | −16.24 ± 0.32 (400 ps) | −15.49 ± 0.20 |
-| 17f~17g | −15.90 ± 0.20 | −15.16 ± 0.20 |
-| 27f~27g | −15.88 ± 0.46 (200 ps) | −15.87 ± 0.20 |
+| 8f\~8g | −16.24 ± 0.32 (400 ps) | −15.49 ± 0.20 |
+| 17f\~17g | −15.90 ± 0.20 | −15.16 ± 0.20 |
+| 27f\~27g | −15.88 ± 0.46 (200 ps) | −15.87 ± 0.20 |
 
-The end states are the same with and without the window, so it can't change the free energy once sampling has converged. The differences of up to 0.75 kcal/mol for 8f~8g and 17f~17g come from single 1 ns runs with a minimum overlap between neighbouring windows of 0.06–0.07, where the MBAR error estimates are likely too small. Showing agreement would need repeats, more λ windows, or both.
+The end states are the same with and without the window, so it can't change the free energy once sampling has converged. The differences of up to 0.75 kcal/mol for 8f\~8g and 17f\~17g come from single 1 ns runs with a minimum overlap between neighbouring windows of 0.06–0.07, where the MBAR error estimates are likely too small. Showing agreement would need repeats, more λ windows, or both.
 
 ## Summary
 

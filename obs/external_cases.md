@@ -4,8 +4,8 @@ This note looks at the free (solvent) leg of seven cases from `failures/2026-08-
 
 | Case | OpenFE's description |
 | --- | --- |
-| pxr OCNT-2311573~OADMET-0006255 | solvent failure, triple bond near the alchemical region |
-| pxr OADMET-0006142~OCNT-2316690 | one mapped heavy atom, large MBAR error |
+| pxr OCNT-2311573\~OADMET-0006255 | solvent failure, triple bond near the alchemical region |
+| pxr OADMET-0006142\~OCNT-2316690 | one mapped heavy atom, large MBAR error |
 | asap eva71_2apro_first_test | solvent and complex failure, hybridisation change |
 | asap EV712AproBLRN edge 1 | solvent and complex failure, hybridisation change |
 | asap EV712AproBLRN edge 2 | solvent and complex failure, poor alignment from a 2D mapping |
@@ -18,8 +18,8 @@ This note looks at the free (solvent) leg of seven cases from `failures/2026-08-
 
 | Case | OpenFE | BioSimSpace |
 | --- | --- | --- |
-| pxr OCNT-2311573~OADMET-0006255 | 38 atoms | 39 atoms |
-| pxr OADMET-0006142~OCNT-2316690 | 4 atoms | 36 atoms |
+| pxr OCNT-2311573\~OADMET-0006255 | 38 atoms | 39 atoms |
+| pxr OADMET-0006142\~OCNT-2316690 | 4 atoms | 36 atoms |
 | asap eva71_2apro_first_test | 37 atoms | 37 atoms, identical |
 | asap EV712AproBLRN edge 1 | 37 atoms | 37 atoms, identical |
 | asap EV712AproBLRN edge 2 | 40 atoms | 40 atoms |
