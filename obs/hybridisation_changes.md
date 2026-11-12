@@ -79,7 +79,7 @@ The end states are the same with and without the window, so it can't change the 
 
 ## Reproducing
 
-Software: SOMD2 devel at 6dea460 (the merge of #287), Ghostly `fix_22` at 0d456c0, Sire and BioSimSpace 2026.3.0.dev, OpenMM 8.6, on an NVIDIA RTX 5070 Ti. Ligands are parameterised with OpenFF 2.3.0 (unconstrained) and `nagl_openff-gnn-am1bcc-1.0.0` charges, the openfe-benchmarks defaults.
+Software: SOMD2 devel at 6dea460 (the merge of #287), Ghostly at 0d456c0, a commit from [ghostly#23](https://github.com/OpenBioSim/ghostly/pull/23) that is now in `devel` (merged in 95e8480), Sire and BioSimSpace 2026.3.0.dev, OpenMM 8.6, on an NVIDIA RTX 5070 Ti. Ligands are parameterised with OpenFF 2.3.0 (unconstrained) and `nagl_openff-gnn-am1bcc-1.0.0` charges, the openfe-benchmarks defaults.
 
 From this repository, with openfe-benchmarks (`feature_obs` branch) checked out next to it:
 

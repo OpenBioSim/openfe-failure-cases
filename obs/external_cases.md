@@ -86,7 +86,7 @@ For pxr OADMET-0006142, BioSimSpace's mapping has 36 atoms where OpenFE's has 4,
 
 ## Reproducing
 
-Software: SOMD2 devel at 6dea460, Ghostly `fix_22` at ae91e52 and 0d456c0, Sire and BioSimSpace 2026.3.0.dev, OpenMM 8.6, on an NVIDIA RTX 5070 Ti.
+Software: SOMD2 devel at 6dea460, Ghostly at ae91e52 and 0d456c0, commits from [ghostly#23](https://github.com/OpenBioSim/ghostly/pull/23) that are now in `devel` (merged in 95e8480), Sire and BioSimSpace 2026.3.0.dev, OpenMM 8.6, on an NVIDIA RTX 5070 Ti.
 
 From this repository, with openfe-benchmarks (`feature_obs` branch) checked out next to it:
 
